@@ -245,8 +245,8 @@ def api_readings():
                 "measurementStartTime": current_start.strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "measurementEndTime": (current_end - timedelta(seconds=1)).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "kind": "VESSEL",
-                "mmsi": "419001491",
-                "imo": "9320910",
+                "mmsi": "419001725",
+                "imo": "9359820",
                 "consumption": {
                     "mainEnginesTotal": round(total_main_engines, 8),
                     "generatorsTotal": round(total_generators, 8),
