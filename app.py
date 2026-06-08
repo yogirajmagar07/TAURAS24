@@ -159,7 +159,7 @@ def api_readings():
 
     from_time = request.args.get("fromTime")
     to_time = request.args.get("toTime")
-    deviceid = "susanmpa"
+    deviceid = "susanad"
 
     if not from_time or not to_time:
         return jsonify({"error": "fromTime and toTime required"}), 400
@@ -181,7 +181,7 @@ def api_readings():
             f"and TimestampIST le '{to_time}'"
         )
 
-        entities = list(table_client_2.query_entities(query))
+        entities = list(table_client.query_entities(query))
 
         current_start = start_dt
 
