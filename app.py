@@ -301,7 +301,7 @@ def parse_dt(value):
 
 def fetch_engine_consumption(engine_type, start, end, interval='hour'):
     """Fetch engine consumption data based on engine type"""
-    deviceid = "susanmpa"
+    deviceid = "susanad"
     
     # Define meter pairs for each engine type
     engine_config = {
@@ -350,7 +350,7 @@ def fetch_engine_consumption(engine_type, start, end, interval='hour'):
     
     # Query all entities
     query = f"PartitionKey eq '{deviceid}'"
-    entities = list(table_client_2.query_entities(query))
+    entities = list(table_client.query_entities(query))
     print(f"Total entities found: {len(entities)}")
     
     # Filter entities by time range
@@ -1003,10 +1003,7 @@ def download_pdf():
                 c.drawString(160, y, "Out Vol")
                 c.drawString(210, y, "Consumption")
                 c.drawString(260, y, "Diff")
-                c.drawString(310, y, "Run Mass")
                 c.drawString(360, y, "Run Vol")
-                c.drawString(410, y, "In Mass")
-                c.drawString(460, y, "Out Mass")
                 c.drawString(510, y, "In Temp")
                 c.drawString(560, y, "Out Temp")
             
@@ -1043,10 +1040,7 @@ def download_pdf():
                         c.drawString(160, y, "Out Vol")
                         c.drawString(210, y, "Consumption")
                         c.drawString(260, y, "Diff")
-                        c.drawString(310, y, "Run Mass")
                         c.drawString(360, y, "Run Vol")
-                        c.drawString(410, y, "In Mass")
-                        c.drawString(460, y, "Out Mass")
                         c.drawString(510, y, "In Temp")
                         c.drawString(560, y, "Out Temp")
                     
