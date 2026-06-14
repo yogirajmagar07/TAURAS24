@@ -165,8 +165,8 @@ def api_readings():
         return jsonify({"error": "fromTime and toTime required"}), 400
 
     try:
-        start_dt = datetime.strptime(from_time, "%Y-%m-%d %H:%M:%S")
-        end_dt = datetime.strptime(to_time, "%Y-%m-%d %H:%M:%S")
+        start_dt = datetime.strptime(from_time, "%Y-%m-%dT%H:%M:%SZ")
+        end_dt = datetime.strptime(to_time, "%Y-%m-%dT%H:%M:%SZ")
     except:
         return jsonify({"error": "Invalid datetime format"}), 400
 
@@ -207,7 +207,7 @@ def api_readings():
                     continue
 
                 try:
-                    ts_dt = datetime.strptime(ts, "%Y-%m-%d %H:%M:%S")
+                    ts_dt = datetime.strptime(ts, "%Y-%m-%dT%H:%M:%SZ")
                 except:
                     continue
 
