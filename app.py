@@ -405,17 +405,17 @@ def api_readings():
 
                 if current_start <= ts_dt < current_end:
 
-                    total_ft1 += get_float(entity, "FT1VolumeFlow")
-                    total_ft2 += get_float(entity, "FT2VolumeFlow")
+                    total_ft1 += get_float(entity, "FT1MassFlow")
+                    total_ft2 += get_float(entity, "FT2MassFlow")
 
-                    total_ft3 += get_float(entity, "FT3VolumeFlow")
-                    total_ft4 += get_float(entity, "FT4VolumeFlow")
+                    total_ft3 += get_float(entity, "FT3MassFlow")
+                    total_ft4 += get_float(entity, "FT4MassFlow")
 
-                    total_ft5 += get_float(entity, "FT5VolumeFlow")
-                    total_ft6 += get_float(entity, "FT6VolumeFlow")
+                    total_ft5 += get_float(entity, "FT5MassFlow")
+                    total_ft6 += get_float(entity, "FT6MassFlow")
 
-                    total_ft7 += get_float(entity, "FT7VolumeFlow")
-                    total_ft8 += get_float(entity, "FT8VolumeFlow")
+                    total_ft7 += get_float(entity, "FT7MassFlow")
+                    total_ft8 += get_float(entity, "FT8MassFlow")
 
                     record_count += 1
 
@@ -432,11 +432,11 @@ def api_readings():
 
                 avg_ft7 = total_ft7 / record_count
                 avg_ft8 = total_ft8 / record_count
-            # else:
-            #     avg_ft1 = avg_ft2 = 0.0
-            #     avg_ft3 = avg_ft4 = 0.0
-            #     avg_ft5 = avg_ft6 = 0.0
-            #     avg_ft7 = avg_ft8 = 0.0
+            else:
+                avg_ft1 = avg_ft2 = 0.0
+                avg_ft3 = avg_ft4 = 0.0
+                avg_ft5 = avg_ft6 = 0.0
+                avg_ft7 = avg_ft8 = 0.0
 
             # Consumption based on average mass-flow values
             main_engine_1_total = avg_ft1 - avg_ft2
